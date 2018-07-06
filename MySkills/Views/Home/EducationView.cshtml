@@ -1,0 +1,63 @@
+﻿@model MySkills.Models.Education
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ОБРАЗОВАНИЕ</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="theme.css" rel="stylesheet">
+    <link href="~/Content/ResumeStyles.css" rel="stylesheet">
+</head>
+<body>
+
+    @Html.Partial("NavBarView")
+
+    <div class="container theme-showcase" role="main">
+        <div>
+            <div class="resume-header">
+                <h1 class="resume-title">ОБРАЗОВАНИЕ</h1>
+                <p class="lead resume-description">Моё высшее образование:</p>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col"><b>@Model.GetEducationRange()</b></div>
+                    <div class="col-7"><b>@Model.University</b></div>
+                 </div>
+                <div class="row">
+                    <div class="col"><p>@Model.Diplom</p></div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-7"></div>
+                    <div class="col">
+                        <blockquote class="resume-code">
+                            <p>
+                                Мы все учились понемногу,<br />
+                                Чему-нибудь и как-нибудь <br />
+                                Так воспитаньем, слава богу,<br />
+                                У нас немудрено блеснуть.<br />
+                            </p>
+                            <br />
+                            <small class="right">
+                                — Из романа в стихах «Евгений Онегин»<br />
+                                А. С. Пушкина
+                            </small>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</body>
+</html>

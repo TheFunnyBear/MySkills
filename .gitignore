@@ -1,0 +1,12 @@
+
+\.vs/
+
+packages/
+
+MySkills/bin/
+
+MySkills\.Tests/bin/
+
+MySkills/obj/
+
+MySkills\.Tests/obj/
