@@ -1,6 +1,8 @@
 ﻿.resume-header {
+    padding: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: rgba(0,0,0,.5);
 }
 
 .resume-title {
@@ -8,28 +10,47 @@
     margin-bottom: 0;
     font-size: 60px;
     font-weight: normal;
+    color:white
 }
 
 .resume-description {
     font-size: 20px;
-    color: #999;
+    color: #f8f5f5;
 }
 
-.left {
-    text-align: left;
+.resume-text {
+    font-size: 16px;
+    color: #f8f5f5;
 }
 
-.right {
-    text-align: right;
+.resume-contacts-text {
+    padding: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.center {
-    text-align: center;
+.resume-text {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 20px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.resume-text a:link,
+.resume-text a:active,
+.resume-text a:visited {
+    color: #94fcff !important;
 }
 
 .resume-code {
     width: auto;
-    background-color: #fff;
+    background-color: #ffffff;
+    color: #1b1919;
     padding: 8px 12px;
     border-left: 4px solid #4CAF50;
     word-wrap: break-word
@@ -41,4 +62,61 @@
     margin-bottom: 1em;
     margin-left: 40px;
     margin-right: 40px;
+}
+
+#ContactsSection {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    height: 100vh;
+    color: #1b1919;
+    background-color: #fbfabc;
+    background-image: url(../Content/Pictures/business-card.jpg);
+    background-size: cover;
+}
+
+#TargetSection {
+    padding-top: 50px;
+    height: 100vh;
+    color: #1b1919;
+    background-color: #673ab7;
+    background-image: url(../Content/Pictures/target.jpg);
+    background-size: cover;
+}
+
+#EducationSection {
+    padding-top: 50px;
+    height: 100vh;
+    color: #1b1919;
+    background-color: #ff9800;
+    background-image: url(../Content/Pictures/education.jpg);
+    background-size: cover;
+}
+
+#StagesSection {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 100%;
+    color: #1b1919;
+    background-color: #00bcd4;
+    background-image: url(../Content/Pictures/conference-room.jpg);
+    background-size: cover;
+}
+
+#SkillsAndAbilitiesSection {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 100%;
+    color: #1b1919;
+    background-color: #009688;
+    background-image: url(../Content/Pictures/skils.jpg);
+    background-size: cover;
+}
+
+#AboutMeSection {
+    padding-top: 50px;
+    height: 100%;
+    color: #1b1919;
+    background-color: #673ab7;
+    background-image: url(../Content/Pictures/about-me.jpg);
+    background-size: cover;
 }

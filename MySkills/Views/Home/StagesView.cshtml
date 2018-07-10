@@ -1,65 +1,34 @@
 ﻿@model MySkills.Models.Stages
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ОПЫТ РАБОТЫ</title>
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="theme.css" rel="stylesheet">
-    <link href="~/Content/ResumeStyles.css" rel="stylesheet">
-</head>
-<body>
-
-    @Html.Partial("NavBarView")
-
-    <div class="container theme-showcase" role="main">
-        <div>
-            <div class="resume-header">
-                <h1 class="resume-title">ОПЫТ РАБОТЫ</h1>
-                <p class="lead resume-description">Это перечень предприятий в которых я работал:</p>
-            </div>
-
-            <div class="container">
-                @foreach (var stageOfWork in @Model.StagesOfWork)
-                {
-                <div class="row">
-                    <div class="col"><b>@stageOfWork.GetWorkRange()</b></div>
-                    <div class="col-7"><b>@stageOfWork.Firm.Name</b></div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="container">
-                            <ul class="list-group list-group-flush">
-                                @foreach (var profession in @stageOfWork.Professions)
-                                {
-                                    <li class="list-group-item">
-                                        <p><b>@profession.ProfessionName</b></p>
-                                        @if (profession.Jobs.Any())
-                                        {
-                                            foreach (var job in profession.Jobs)
-                                            {
-                                                <p>@string.Format("\t{0};", job.Title)</p>
-                                            }
-                                        }
-                                    </li>
-                                }
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-                }
-            </div>
+<div class="container theme-showcase" role="main">
+    <div>
+        <div class="resume-header">
+            <h1 class="resume-title">ОПЫТ РАБОТЫ</h1>
+            <p class="lead resume-description">Это перечень предприятий в которых я работал:</p>
         </div>
-    </div>
 
-</body>
-</html>
+        <table border="0" class="resume-text">
+            @foreach (var stageOfWork in @Model.StagesOfWork)
+            {
+            <tr>
+                <td><b>@stageOfWork.GetWorkRange()</b></td>
+                <td><b>@stageOfWork.Firm.Name</b></td>
+            </tr>
+            <tr>
+                <td colspan="2">@foreach (var profession in @stageOfWork.Professions)
+                {
+                    <p><b>@profession.ProfessionName</b></p>
+                    if (profession.Jobs.Any())
+                    {
+                        foreach (var job in profession.Jobs)
+                        {
+                            <p><small>@string.Format("\t{0};", job.Title)</small></p>
+                        }
+                    }
+                }
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>

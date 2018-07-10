@@ -109,6 +109,16 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Pictures\about-me.jpg" />
+    <Content Include="Content\Pictures\business-card.jpg" />
+    <Content Include="Content\Pictures\conference-room.jpg" />
+    <Content Include="Content\Pictures\education.jpg" />
+    <Content Include="Content\Pictures\myPhoto01.jpg" />
+    <Content Include="Content\Pictures\myPhoto02.jpg" />
+    <Content Include="Content\Pictures\myPhoto03.jpg" />
+    <Content Include="Content\Pictures\myPhoto04.jpg" />
+    <Content Include="Content\Pictures\skils.jpg" />
+    <Content Include="Content\Pictures\target.jpg" />
     <Content Include="Content\ResumeStyles.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -160,6 +170,7 @@
     <Compile Include="Models\FirmDescription.cs" />
     <Compile Include="Models\JobDescription.cs" />
     <Compile Include="Models\ProfessionDescription.cs" />
+    <Compile Include="Models\Resume.cs" />
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\SkillsAndAbilities.cs" />
     <Compile Include="Models\StageOfWork.cs" />
@@ -188,6 +199,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\NavBarView.cshtml" />
+    <Content Include="Views\Home\ContactsView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

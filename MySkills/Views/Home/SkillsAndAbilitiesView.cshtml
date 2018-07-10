@@ -1,50 +1,28 @@
 ﻿@model MySkills.Models.SkillsAndAbilities
 
-@{
-    Layout = null;
-}
+<div class="container theme-showcase" role="main">
+    <div>
+        <div class="resume-header">
+            <h1 class="resume-title">УМЕНИЯ И НАВЫКИ</h1>
+            <p class="lead resume-description">Тут перечислены технологии с которыми я работал:</p>
+        </div>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>УМЕНИЯ И НАВЫКИ</title>
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="theme.css" rel="stylesheet">
-    <link href="~/Content/ResumeStyles.css" rel="stylesheet">
-</head>
-<body>
-
-    @Html.Partial("NavBarView")
-
-    <div class="container theme-showcase" role="main">
-        <div>
-            <div class="resume-header">
-                <h1 class="resume-title">УМЕНИЯ И НАВЫКИ</h1>
-                <p class="lead resume-description">Тут перечислены технологии с которыми я работал:</p>
-            </div>
-
-            <div class="container">
-                <ul class="list-group list-group-flush">
-                @foreach (var skill in @Model.Skills)
-                {
-                    <li class="list-group-item">
-                        <p>@skill.Name</p>
-                        @if (skill.SubSkills.Any())
+        <div class="container resume-text" >
+            <ul>
+            @foreach (var skill in @Model.Skills)
+            {
+                <li>
+                    <p>@skill.Name</p>
+                    @if (skill.SubSkills.Any())
+                    {
+                        foreach (var subSkill in skill.SubSkills)
                         {
-                            foreach (var subSkill in skill.SubSkills)
-                            {
-                                <p>@string.Format("\t{0};", subSkill)</p>
-                            }
+                            <p><small>@string.Format("\t{0};", subSkill)</small></p>
                         }
-                    </li>
-                }
-                </ul>
-            </div>
+                    }
+                </li>
+            }
+            </ul>
         </div>
     </div>
-</body>
-</html>
+</div>

@@ -13,8 +13,8 @@ namespace MySkills.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var currentContacts = new Contacts();
-            return View(currentContacts);
+            var resume = new Resume();
+            return View(resume);
         }
 
         [HttpGet]
@@ -43,6 +43,13 @@ namespace MySkills.Controllers
         {
             var stages = new Stages();
             return View(stages);
+        }
+
+        [HttpGet]
+        public ViewResult ContactsView()
+        {
+            var contacts = new Contacts();
+            return View(contacts);
         }
 
         [HttpGet]

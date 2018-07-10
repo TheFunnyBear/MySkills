@@ -1,0 +1,39 @@
+﻿@model MySkills.Models.Contacts
+
+<div class="container theme-showcase" role="main">
+    <div>
+        <div class="resume-header">
+            <h1 class="resume-title">КОНТАКТЫ</h1>
+            <p class="lead resume-description">Для связи со мной используйте эти контактные данные.</p>
+        </div>
+
+        <div>
+            <address class="resume-text" >
+                <table border="0">
+                    <tr>
+                        <td width="70%"></td>
+                        <td width="30%">
+                            <strong>@Model.FullName</strong><br />
+                            <abbr title="E-Mail для связи">E-Mail: </abbr><a href="mailto:>@Model.Email">@Model.Email</a><br />
+                            <abbr title="Skype для связи">Skype: </abbr><a href="skype:@Model.Skype?chat">@Model.Skype</a><br />
+                            <abbr title="Контактный телефон">Телефон: </abbr>@Model.Phone<br />
+                            <abbr title="Мой сайт">Web: </abbr><a href="@Model.WebSite">@Model.WebSite</a><br />
+                            <br />
+                            <abbr title="Тут я проживаю">Расположение: </abbr>@Model.Location
+                            <br />
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="resume-contacts-text">
+                    <abbr title="Отсканируйте QR-код своим мобильным, чтобы получить контную информацию">QR код с контной информацией: </abbr> <br />
+                    <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.QrCode))" />
+                    <br />
+                    <abbr title="Скачать файл с контной информацией">Файл с контной информацией: </abbr> <i> @Html.ActionLink("скачать", "VCardFile") </i>
+                </div>
+                <br />
+                <br />
+            </address>
+        </div>
+    </div>
+</div>

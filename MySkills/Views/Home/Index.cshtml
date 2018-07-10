@@ -1,4 +1,4 @@
-﻿@model MySkills.Models.Contacts
+﻿@model MySkills.Models.Resume
 
 @{
     Layout = null;
@@ -8,44 +8,35 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>КОНТАКТЫ</title>
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="theme.css" rel="stylesheet">
-    <link href="~/Content/ResumeStyles.css" rel="stylesheet">
+        <title>@Model.Contacts.FullName</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/Content/ResumeStyles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-    
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
     @Html.Partial("NavBarView")
 
-    <div class="container theme-showcase" role="main">
-        <div>
-            <div class="resume-header">
-                <h1 class="resume-title">КОНТАКТЫ</h1>
-                <p class="lead resume-description">Для связи со мной используйте эти контактные данные.</p>
-            </div>
-
-            <div class="bd-example">
-                <address>
-                    <strong>@Model.FullName</strong><br />
-                    <abbr title="E-Mail для связи">E-Mail: </abbr><a href="mailto:>@Model.Email">@Model.Email</a><br />
-                    <abbr title="Skype для связи">Skype: </abbr><a href="skype:@Model.Skype?chat">@Model.Skype</a><br />
-                    <abbr title="Контактный телефон">Телефон: </abbr>@Model.Phone<br />
-                    <abbr title="Мой сайт">Web: </abbr><a href="@Model.WebSite">@Model.WebSite</a><br />
-                    <br />
-                    <abbr title="Тут я проживаю">Расположение: </abbr>@Model.Location
-                </address>
-                <br />
-                <abbr title="Отсканируйте QR-код своим мобильным, чтобы получить контную информацию">QR код с контной информацией: </abbr> <br />
-                <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.QrCode))" />
-                <br />
-                <abbr title="Скачать файл с контной информацией">Файл с контной информацией: </abbr> <i> @Html.ActionLink("скачать", "VCardFile") </i>
-                <br />
-            </div>
-        </div>
+    <div id="ContactsSection" class="container-fluid">
+        @Html.Partial("ContactsView", @Model.Contacts)
     </div>
-
+    <div id="TargetSection" class="container-fluid">
+        @Html.Partial("TargetDescriptionView", Model.Target)
+    </div>
+    <div id="EducationSection" class="container-fluid">
+        @Html.Partial("EducationView", Model.Education)
+    </div>
+    <div id="StagesSection" class="container-fluid">
+        @Html.Partial("StagesView", Model.Stages)
+    </div>
+    <div id="SkillsAndAbilitiesSection" class="container-fluid">
+        @Html.Partial("SkillsAndAbilitiesView", Model.SkillsAndAbilities)
+    </div>
+    <div id="AboutMeSection" class="container-fluid">
+        @Html.Partial("AboutMeView", @Model.AboutMe)
+    </div>
 </body>
 </html>
