@@ -1,0 +1,26 @@
+﻿@model MySkills.Models.SkillsAndAbilities
+
+<div class="resume-header">
+    <h1 class="resume-title">УМЕНИЯ И НАВЫКИ</h1>
+    <p class="lead resume-description">Тут перечислены технологии с которыми я работал:</p>
+</div>
+
+<div class="container resume-text">
+    <ul>
+        @foreach (var skill in @Model.Skills)
+        {
+            <li>
+                @skill.Name<br />
+                @if (skill.SubSkills.Any())
+                {
+                    <ul>
+                        @foreach (var subSkill in skill.SubSkills)
+                        {
+                            <li>@string.Format("\t{0};", subSkill)</li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+</div>

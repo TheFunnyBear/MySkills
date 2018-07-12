@@ -6,17 +6,27 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Резюме</a>
+            <a class="navbar-brand" href="#">@Resources.NavBarView.Brand</a>
         </div>
         <div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#ContactsSection">КОНТАКТЫ</a></li>
-                    <li class=""><a href="#TargetSection">ЦЕЛЬ</a></li>
-                    <li class=""><a href="#EducationSection">ОБРАЗОВАНИЕ</a></li>
-                    <li class=""><a href="#StagesSection">ОПЫТ РАБОТЫ</a></li>
-                    <li class=""><a href="#SkillsAndAbilitiesSection">УМЕНИЯ И НАВЫКИ</a></li>
-                    <li class=""><a href="#AboutMeSection">О СЕБЕ</a></li>
+                    <li class="active"><a href="#ContactsSection">@Resources.NavBarView.ContactsSection</a></li>
+                    <li class=""><a href="#TargetSection">@Resources.NavBarView.TargetSection</a></li>
+                    <li class=""><a href="#EducationSection">@Resources.NavBarView.EducationSection</a></li>
+                    <li class=""><a href="#StagesSection">@Resources.NavBarView.StagesSection</a></li>
+                    <li class=""><a href="#SkillsAndAbilitiesSection">@Resources.NavBarView.SkillsAndAbilitiesSection</a></li>
+                    <li class=""><a href="#AboutMeSection">@Resources.NavBarView.AboutMeSection</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" class="language" rel="ru-RU"><img src="assets/img/it_IT.png" alt="Русский" /></a></li>
+                            <li><a href="#" class="language" rel="en-US"><img src="assets/img/en_US.png" alt="English" /></a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink(@Resources.NavBarView.DownloadPdf, "ResumePdfFile", "Home", null, new { @class = "btn btn-primary active" })</li>
                 </ul>
             </div>
         </div>

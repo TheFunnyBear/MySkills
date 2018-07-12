@@ -1,0 +1,33 @@
+﻿@model MySkills.Models.Stages
+
+<div>
+    <div class="resume-header">
+        <h1 class="resume-title">ОПЫТ РАБОТЫ</h1>
+        <p class="lead resume-description">Это перечень предприятий в которых я работал:</p>
+    </div>
+
+    <div>
+        @foreach (var stageOfWork in @Model.StagesOfWork)
+        {
+            <b>@stageOfWork.GetWorkRange()</b> 
+            <b>@stageOfWork.Firm.Name</b>
+            <ul>
+                @foreach (var profession in @stageOfWork.Professions)
+                {
+                    <li> <b>@profession.ProfessionName</b><br/>
+                        <ul>
+                            @if (profession.Jobs.Any())
+                            {
+                                foreach (var job in profession.Jobs)
+                                {
+                                    <li>@string.Format("\t{0};", job.Title)</li>
+                                }
+                            }
+                         </ul>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>
+
