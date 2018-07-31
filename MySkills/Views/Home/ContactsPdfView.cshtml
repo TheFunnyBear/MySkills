@@ -5,20 +5,20 @@
     <h1>@Model.FullName</h1><br /><br />
 
     <div class="resume-header">
-        <h1 class="resume-title">КОНТАКТЫ</h1>
-        <p class="lead resume-description">Для связи со мной используйте эти контактные данные.</p>
+        <h1 class="resume-title">@Resources.ContactsView.Title</h1>
+        <p class="lead resume-description">@Resources.ContactsView.Description</p>
     </div>
 
     <div>
         <address class="resume-text">
-            <span>E-Mail: </span><a href="mailto:>@Model.Email">@Model.Email</a><br />
-            <span>Skype: </span><a href="skype:@Model.Skype?chat">@Model.Skype</a><br />
-            <span>Телефон: </span>@Model.Phone<br />
-            <span>Web: </span><a href="@Model.WebSite">@Model.WebSite</a><br />
+            <span>@Resources.ContactsView.EMailText</span><a href="mailto:>@Model.Email">@Model.Email</a><br />
+            <span>@Resources.ContactsView.SkypeText</span><a href="skype:@Model.Skype?chat">@Model.Skype</a><br />
+            <span>@Resources.ContactsView.PhoneText</span>@Model.Phone<br />
+            <span>@Resources.ContactsView.WebSiteText</span><a href="@Model.WebSite">@Model.WebSite</a><br />
             <br />
-            <span>Расположение: </span>@Model.Location
+            <span>@Resources.ContactsView.LocationText</span>@Model.Location
             <br />
-            <span title="Отсканируйте QR-код своим мобильным, чтобы получить контную информацию">QR код с контной информацией: </span> <br />
+            <span>@Resources.ContactsView.QrCodeText</span> <br />
             <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.QrCode))" />
             <br />
         </address>
