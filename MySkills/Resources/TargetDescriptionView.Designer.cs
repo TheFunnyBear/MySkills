@@ -22,14 +22,14 @@ namespace Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class NavBarView {
+    public class TargetDescriptionView {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal NavBarView() {
+        internal TargetDescriptionView() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MySkills.Resources.NavBarView", typeof(NavBarView).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MySkills.Resources.TargetDescriptionView", typeof(TargetDescriptionView).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,83 +61,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на ABOUT ME.
+        ///   Ищет локализованную строку, похожую на My current goal: .
         /// </summary>
-        public static string AboutMeSection {
+        public static string Description {
             get {
-                return ResourceManager.GetString("AboutMeSection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Resume.
-        /// </summary>
-        public static string Brand {
-            get {
-                return ResourceManager.GetString("Brand", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на CONTACTS.
-        /// </summary>
-        public static string ContactsSection {
-            get {
-                return ResourceManager.GetString("ContactsSection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на DOWNLOAD PDF FILE.
-        /// </summary>
-        public static string DownloadPdf {
-            get {
-                return ResourceManager.GetString("DownloadPdf", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на EDUCATION.
-        /// </summary>
-        public static string EducationSection {
-            get {
-                return ResourceManager.GetString("EducationSection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Select language.
-        /// </summary>
-        public static string Language {
-            get {
-                return ResourceManager.GetString("Language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на SKILLS ANDABILITIES.
-        /// </summary>
-        public static string SkillsAndAbilitiesSection {
-            get {
-                return ResourceManager.GetString("SkillsAndAbilitiesSection", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на STAGES OF WORK.
-        /// </summary>
-        public static string StagesSection {
-            get {
-                return ResourceManager.GetString("StagesSection", resourceCulture);
+                return ResourceManager.GetString("Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на TARGET.
         /// </summary>
-        public static string TargetSection {
+        public static string Title {
             get {
-                return ResourceManager.GetString("TargetSection", resourceCulture);
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace MySkills.Models
 {
@@ -25,7 +26,13 @@ namespace MySkills.Models
         {
             const string dateFormat = "dd.MM.yyyy";
 
-            var endDate = (IsCompleate) ? EndDate.ToString(dateFormat) : "СЕЙЧАС";
+            var endDate = (IsCompleate) ? EndDate.ToString(dateFormat) : "NOW";
+
+            if (Thread.CurrentThread.CurrentCulture.Name == "ru-RU")
+            {
+                endDate = (IsCompleate) ? EndDate.ToString(dateFormat) : "СЕЙЧАС";
+            }
+                
             return $"{StartDate.ToString(dateFormat)} - {endDate}";
         }
 

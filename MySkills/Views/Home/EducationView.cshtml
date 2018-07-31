@@ -3,8 +3,8 @@
 <div class="container theme-showcase" role="main">
     <div>
         <div class="resume-header">
-            <h1 class="resume-title">ОБРАЗОВАНИЕ</h1>
-            <p class="lead resume-description">Моё высшее образование:</p>
+            <h1 class="resume-title">@Resources.EducationView.Title</h1>
+            <p class="lead resume-description">@Resources.EducationView.Description</p>
         </div>
 
         <table border="0" class="resume-text">
@@ -16,7 +16,8 @@
                 <td colspan="2"><p>@Model.Diplom</p></td>
             </tr>
         </table>
-
+        @if (Model.IsShouldOneginShow)
+        {
         <table border="0" class="resume-text">
             <tr>
                 <td width="70%"></td>
@@ -37,6 +38,7 @@
                 </td>
             </tr>
         </table>
+        }
     </div>
 </div>
 

@@ -117,31 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutMeSection" xml:space="preserve">
-    <value>ABOUT ME</value>
+  <data name="Description" xml:space="preserve">
+    <value>Please use this information for contact with me</value>
   </data>
-  <data name="Brand" xml:space="preserve">
-    <value>Resume</value>
+  <data name="EMailCaption" xml:space="preserve">
+    <value>Use this e-mail for contct with me</value>
   </data>
-  <data name="ContactsSection" xml:space="preserve">
+  <data name="EMailText" xml:space="preserve">
+    <value>E-Mail:</value>
+  </data>
+  <data name="LocationCaption" xml:space="preserve">
+    <value>This is my location</value>
+  </data>
+  <data name="LocationText" xml:space="preserve">
+    <value>Location: </value>
+  </data>
+  <data name="PhoneCaption" xml:space="preserve">
+    <value>Use this phone number for call to me</value>
+  </data>
+  <data name="PhoneText" xml:space="preserve">
+    <value>Phone: </value>
+  </data>
+  <data name="QrCodeCaption" xml:space="preserve">
+    <value>Please scan this QR code with your mobile phone</value>
+  </data>
+  <data name="QrCodeText" xml:space="preserve">
+    <value>QR Code with contact information: </value>
+  </data>
+  <data name="SkypeCaption" xml:space="preserve">
+    <value>Use this Skype contact name for contact with me</value>
+  </data>
+  <data name="SkypeText" xml:space="preserve">
+    <value>Skype:</value>
+  </data>
+  <data name="Title" xml:space="preserve">
     <value>CONTACTS</value>
   </data>
-  <data name="DownloadPdf" xml:space="preserve">
-    <value>DOWNLOAD PDF FILE</value>
+  <data name="VCarCaption" xml:space="preserve">
+    <value>Please download this file for imprt conact information in your mail client application</value>
   </data>
-  <data name="EducationSection" xml:space="preserve">
-    <value>EDUCATION</value>
+  <data name="VCardFileLink" xml:space="preserve">
+    <value>download</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Select language</value>
+  <data name="VCardFileText" xml:space="preserve">
+    <value>VCard file with contact information: </value>
   </data>
-  <data name="SkillsAndAbilitiesSection" xml:space="preserve">
-    <value>SKILLS ANDABILITIES</value>
+  <data name="WebSiteCaption" xml:space="preserve">
+    <value>This is my personal web page</value>
   </data>
-  <data name="StagesSection" xml:space="preserve">
-    <value>STAGES OF WORK</value>
-  </data>
-  <data name="TargetSection" xml:space="preserve">
-    <value>TARGET</value>
+  <data name="WebSiteText" xml:space="preserve">
+    <value>Web site:</value>
   </data>
 </root>

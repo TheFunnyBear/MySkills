@@ -3,8 +3,8 @@
 <div class="container theme-showcase" role="main">
     <div>
         <div class="resume-header">
-            <h1 class="resume-title">КОНТАКТЫ</h1>
-            <p class="lead resume-description">Для связи со мной используйте эти контактные данные.</p>
+            <h1 class="resume-title">@Resources.ContactsView.Title</h1>
+            <p class="lead resume-description">@Resources.ContactsView.Description</p>
         </div>
 
         <div>
@@ -14,22 +14,22 @@
                         <td width="70%"></td>
                         <td width="30%">
                             <strong>@Model.FullName</strong><br />
-                            <abbr title="E-Mail для связи">E-Mail: </abbr><a href="mailto:>@Model.Email">@Model.Email</a><br />
-                            <abbr title="Skype для связи">Skype: </abbr><a href="skype:@Model.Skype?chat">@Model.Skype</a><br />
-                            <abbr title="Контактный телефон">Телефон: </abbr>@Model.Phone<br />
-                            <abbr title="Мой сайт">Web: </abbr><a href="@Model.WebSite">@Model.WebSite</a><br />
+                            <abbr title="@Resources.ContactsView.EMailCaption">@Resources.ContactsView.EMailText</abbr><a href="mailto:>@Model.Email">@Model.Email</a><br />
+                            <abbr title="@Resources.ContactsView.SkypeCaption">@Resources.ContactsView.SkypeText</abbr><a href="skype:@Model.Skype?chat">@Model.Skype</a><br />
+                            <abbr title="@Resources.ContactsView.PhoneCaption">@Resources.ContactsView.PhoneText</abbr>@Model.Phone<br />
+                            <abbr title="@Resources.ContactsView.WebSiteCaption">@Resources.ContactsView.WebSiteText</abbr><a href="@Model.WebSite">@Model.WebSite</a><br />
                             <br />
-                            <abbr title="Тут я проживаю">Расположение: </abbr>@Model.Location
+                            <abbr title="@Resources.ContactsView.LocationCaption">@Resources.ContactsView.LocationText</abbr>@Model.Location
                             <br />
                         </td>
                     </tr>
                 </table>
 
                 <div class="resume-contacts-text">
-                    <abbr title="Отсканируйте QR-код своим мобильным, чтобы получить контную информацию">QR код с контной информацией: </abbr> <br />
+                    <abbr title="@Resources.ContactsView.QrCodeCaption">@Resources.ContactsView.QrCodeText</abbr> <br />
                     <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.QrCode))" />
                     <br />
-                    <abbr title="Скачать файл с контной информацией">Файл с контной информацией: </abbr> <i> @Html.ActionLink("скачать", "VCardFile") </i>
+                    <abbr title="@Resources.ContactsView.VCarCaption">@Resources.ContactsView.VCardFileText</abbr> <i> @Html.ActionLink(@Resources.ContactsView.VCardFileLink, "VCardFile") </i>
                 </div>
                 <br />
                 <br />

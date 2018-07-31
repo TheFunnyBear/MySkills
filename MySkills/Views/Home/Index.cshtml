@@ -18,7 +18,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-    @Html.Partial("NavBarView")
+    @Html.Partial("NavBarView", @Model.NavBar)
 
     <div id="ContactsSection" class="container-fluid">
         @Html.Partial("ContactsView", @Model.Contacts)

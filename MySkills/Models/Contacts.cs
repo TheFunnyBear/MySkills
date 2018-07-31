@@ -6,6 +6,7 @@ using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Text;
 
@@ -15,13 +16,25 @@ namespace MySkills.Models
     {
         public Contacts()
         {
-            InitDefaultValue();
+            InitDefaultEnglishValue();
+        }
+
+        public Contacts(CultureInfo culture)
+        {
+            if (culture.Name == "ru-RU")
+            {
+                InitDefaultRussianValue();
+            }
+            else
+            {
+                InitDefaultEnglishValue();
+            }
         }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Patronymic { get; set; }
-        public string FullName { get { return $"{LastName} {FirstName} {Patronymic}"; } }
+        public string FullName { get { return (Patronymic == null) ? $"{FirstName} {LastName}" : $"{LastName} {FirstName} {Patronymic}"; } }
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Skype { get; set; }
@@ -63,15 +76,27 @@ namespace MySkills.Models
             return (byte[])new ImageConverter().ConvertTo(qrCodeBitMap, typeof(byte[]));
         }
 
-        private void InitDefaultValue()
+        private void InitDefaultEnglishValue()
+        {
+            FirstName = "DENIS";
+            LastName = "KOSOLAPOV";
+            Phone = "+7(978)811-63-27";
+            Email = "DENIS@KOSOLAPOV.INFO";
+            Skype = "denis.kosolapov";
+            WebSite = new Uri(@"https://www.kosolapov.info/");
+            Location = "Russia, Sevastopol";
+        }
+
+
+        private void InitDefaultRussianValue()
         {
             FirstName = "ДЕНИС";
             LastName = "КОСОЛАПОВ";
             Patronymic = "АЛЕКСАНДРОВИЧ";
             Phone = "+7(978)811-63-27";
-            Email = "DENISISVODOLAZ@YANDEX.RU";
+            Email = "DENIS@KOSOLAPOV.INFO";
             Skype = "denis.kosolapov";
-            WebSite = new Uri(@"http://www.kdasoft.ru/");
+            WebSite = new Uri(@"https://www.kosolapov.info/");
             Location = "Россия, г. Севастополь";
         }
     }

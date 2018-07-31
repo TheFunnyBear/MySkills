@@ -8,41 +8,11 @@ using System.Web.Mvc;
 using System.Text;
 using PdfSharp;
 using TheArtOfDev.HtmlRenderer.PdfSharp;
+using System.Threading;
+using System.Globalization;
 
 namespace MySkills.Controllers
 {
-    public static class ControllerExtensions
-    {
-        public static string RenderView(this Controller controller, string viewName, object model)
-        {
-            return RenderView(controller, viewName, new ViewDataDictionary(model));
-        }
-
-        public static string RenderView(this Controller controller, string viewName, ViewDataDictionary viewData)
-        {
-            var controllerContext = controller.ControllerContext;
-
-            var viewResult = ViewEngines.Engines.FindView(controllerContext, viewName, null);
-
-            StringWriter stringWriter;
-
-            using (stringWriter = new StringWriter())
-            {
-                var viewContext = new ViewContext(
-                    controllerContext,
-                    viewResult.View,
-                    viewData,
-                    controllerContext.Controller.TempData,
-                    stringWriter);
-
-                viewResult.View.Render(viewContext, stringWriter);
-                viewResult.ViewEngine.ReleaseView(controllerContext, viewResult.View);
-            }
-
-            return stringWriter.ToString();
-        }
-    }
-
     public class HomeController : Controller
     {
         // GET: Home
@@ -159,6 +129,21 @@ namespace MySkills.Controllers
                 FileDownloadName = "DenisKosolapov.pdf"
             };
             return fileStreamResult;
+        }
+
+        public ActionResult Change(string lang)
+        {
+            if (lang != null)
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(lang);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang);
+            }
+            HttpCookie cookie = new HttpCookie("Language");
+            cookie.Value = lang;
+            Response.Cookies.Add(cookie);
+
+            var resume = new Resume();
+            return View("Index", resume);
         }
     }
 }

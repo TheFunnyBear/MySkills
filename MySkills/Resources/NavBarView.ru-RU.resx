@@ -132,6 +132,9 @@
   <data name="EducationSection" xml:space="preserve">
     <value>ОБРАЗОВАНИЕ</value>
   </data>
+  <data name="Language" xml:space="preserve">
+    <value>Select language</value>
+  </data>
   <data name="SkillsAndAbilitiesSection" xml:space="preserve">
     <value>УМЕНИЯ И НАВЫКИ</value>
   </data>

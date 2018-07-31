@@ -17,15 +17,21 @@ namespace MySkills
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
 
-        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            string culture = "en-US";
-            if (Request.UserLanguages != null)
+            HttpCookie cookie = HttpContext.Current.Request.Cookies["Language"];
+
+            if (cookie != null && cookie.Value != null)
             {
-                culture = Request.UserLanguages[0];
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(cookie.Value);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(cookie.Value);
             }
-            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(culture);
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(culture);
+            else
+            {
+
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("En");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("En");
+            }
         }
 
     }
