@@ -102,23 +102,24 @@ namespace MySkills.Controllers
         public FileStreamResult ResumePdfFile()
         {
             var htmlView = new StringBuilder();
-            
-            var contacts = new Contacts();
+            var currentCulture = Thread.CurrentThread.CurrentCulture;
+
+            var contacts = new Contacts(currentCulture);
             htmlView.AppendLine(this.RenderView("ContactsPdfView", contacts));
 
-            var targetDescription = new TargetDescription();
+            var targetDescription = new TargetDescription(currentCulture);
             htmlView.AppendLine(this.RenderView("TargetDescriptionView", targetDescription));
 
-            var education = new Education();
+            var education = new Education(currentCulture);
             htmlView.AppendLine(this.RenderView("EducationPdfView", education));
             
-            var stages = new Stages();
+            var stages = new Stages(currentCulture);
             htmlView.AppendLine(this.RenderView("StagesPdfView", stages));
 
-            var skillsAndAbilities = new SkillsAndAbilities();
+            var skillsAndAbilities = new SkillsAndAbilities(currentCulture);
             htmlView.AppendLine(this.RenderView("SkillsAndAbilitiesPdfView", skillsAndAbilities));
 
-            var aboutMe = new AboutMe();
+            var aboutMe = new AboutMe(currentCulture);
             htmlView.AppendLine(this.RenderView("AboutMePdfView", aboutMe));
 
             var pdfArray= PdfSharpConvert(htmlView.ToString());
