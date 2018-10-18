@@ -142,7 +142,7 @@
     <value>Отсканируйте QR-код своим мобильным, чтобы получить контную информацию</value>
   </data>
   <data name="QrCodeText" xml:space="preserve">
-    <value>QR код с контной информацией:</value>
+    <value>QR код с контактной информацией:</value>
   </data>
   <data name="SkypeCaption" xml:space="preserve">
     <value>Skype для связи</value>
